@@ -35,19 +35,3 @@ class Desenvolvedor extends Funcionario {
     console.log(`${this.nome} está programando em ${this.linguagem}`);
   }
 }
-
-// Criando a instancia solicitada
-const gerente = new Gerente("Daniele", 35, "Gerente", "TI");
-const desenvolvedor = new Desenvolvedor("Rhuan", 28, "Desenvolvedor", "JavaScript");
-
-// Criando uma separação pra ficar visivelmente mais legivel
-console.log("-".repeat(100));
-gerente.seApresentar();
-gerente.trabalhar();
-gerente.gerenciar();
-console.log("-".repeat(100));
-console.log("-".repeat(100));
-desenvolvedor.seApresentar();
-desenvolvedor.trabalhar();
-desenvolvedor.programar();
-console.log("-".repeat(100));
