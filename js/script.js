@@ -44,11 +44,26 @@ const inputIdade = document.getElementById("idade-input");
 const selectCargo = document.getElementById("cargo-select");
 
 // Adicionando um event listener para o evento de submissão do formulário
+// Adicionando um event listener para capturar a mudança de seleção do selectCargo
+selectCargo.addEventListener("change", function () {
+  const cargoSelecionado = selectCargo.value;
+
+  if (cargoSelecionado === "gerente") {
+    document.getElementById("departamento-div").style.display = "block";
+    document.getElementById("linguagem-div").style.display = "none"; // Oculta o campo de linguagem
+  } else if (cargoSelecionado === "desenvolvedor") {
+    document.getElementById("linguagem-div").style.display = "block";
+    document.getElementById("departamento-div").style.display = "none"; // Oculta o campo de departamento
+  } else {
+    document.getElementById("departamento-div").style.display = "none"; // Oculta o campo de departamento
+    document.getElementById("linguagem-div").style.display = "none"; // Oculta o campo de linguagem
+  }
+});
+
 form.addEventListener("submit", function (event) {
-  // Verifica se um cargo foi selecionado
   const cargoSelecionado = selectCargo.value;
   if (cargoSelecionado === "") {
     alert("Por favor, selecione um cargo antes de cadastrar.");
-    event.preventDefault(); // Evita a submissão do formulário
+    event.preventDefault();
   }
 });
