@@ -35,3 +35,20 @@ class Desenvolvedor extends Funcionario {
     console.log(`${this.nome} está programando em ${this.linguagem}`);
   }
 }
+
+// começando a usar DOM
+// Selecionando elementos
+const form = document.getElementById("cadastro");
+const inputNome = document.getElementById("nome-input");
+const inputIdade = document.getElementById("idade-input");
+const selectCargo = document.getElementById("cargo-select");
+
+// Adicionando um event listener para o evento de submissão do formulário
+form.addEventListener("submit", function (event) {
+  // Verifica se um cargo foi selecionado
+  const cargoSelecionado = selectCargo.value;
+  if (cargoSelecionado === "") {
+    alert("Por favor, selecione um cargo antes de cadastrar.");
+    event.preventDefault(); // Evita a submissão do formulário
+  }
+});
